@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  border: solid 1px blue;
+  width: 6%;
+  margin: 8px;
+}
+
+/*---------- Header----------- */
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flex-nav {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-nav a,
+h3 {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+/*---------- Connexion----------- */
+
+.connexion {
+  height: 82vh;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.flex-connexion {
+  background-color: gray;
+  border-radius: 23px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  padding: 28px;
+}
+
+.group {
+  margin-bottom: 9px;
+}
+
+.left-part {
+  width: 50%;
+}
+
+.right-part {
+  padding: 0;
+  width: 71%;
+}
+
+.flex-column {
+  padding: 20px;
+}
+
+.left-part input {
+  width: 190%;
+}
+
+.btn-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 25px;
+  background-color: #5990bf;
+  border: none;
+  padding: 15px;
+}
+
+/*---------- Footer----------- */
+footer {
+  background-color: #5990bf;
+  width: 100%;
+  height: 8vh;
+  text-align: center;
+}
+
+footer > p {
+  padding-top: 20px;
+  padding-bottom: 12px;
+}

@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  border: solid 1px blue;
+  width: 6%;
+  margin: 8px;
+}
+
+/*---------- Header----------- */
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flex-nav {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-nav a,
+h3 {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+/*---------- Blog----------- */
+
+.welcome {
+  max-width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 29px;
+}
+
+.card-body {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+.body-picture img {
+  width: 100%;
+  padding: 10px;
+}
+
+.content-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  width: 46%;
+}
+
+.card-col {
+  display: flex;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: auto;
+  width: 70%;
+  margin: auto;
+  gap: 20px;
+}
+
+.connexion {
+  height: 42vh;
+  width: 67%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.flex-connexion {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  padding: 24px;
+}
+
+#scroller {
+  width: 80%;
+  height: 70%;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+
+.group {
+  margin-bottom: 9px;
+}
+
+.left-part {
+  width: 50%;
+}
+
+.right-part {
+  padding: 0;
+  width: 71%;
+}
+
+.flex-column {
+  padding: 20px;
+}
+
+.left-part input {
+  width: 190%;
+}
+
+.btn-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 25px;
+  background-color: blue;
+  border: none;
+  padding: 15px;
+}
+
+/*---------- Footer----------- */
+
+footer {
+  background-color:#5990bf;
+  width: 100%;
+  height: 8vh;
+  text-align: center;
+}
+
+footer > p {
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
