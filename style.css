@@ -10,6 +10,10 @@ hr {
   margin: 8px;
 }
 
+body {
+  height: 100vh;
+}
+
 /*---------- Header----------- */
 
 .head {
@@ -41,12 +45,12 @@ h3 {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding: 29px;
   background-color: gray;
-  height: 77vh;
-  margin-bottom: 55px;
+  height: 65vh;
+  margin-bottom: 32px;
   border-radius: 46px;
 }
 
@@ -55,11 +59,20 @@ h3 {
   justify-content: space-between;
   width: 70%;
   height: 10vh;
+  padding-bottom: 20px;
+}
+
+.welcome-p {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  width: 70%;
+  padding-top: 40px;
 }
 
 .fa-useur i {
   font-size: 80px;
-  color:aliceblue;
+  color: aliceblue;
 }
 
 .part-middle > button {
@@ -92,9 +105,19 @@ h3 {
   padding: 7px;
 }
 
+.card-body img {
+  border-radius: 17px 17px 0 0;
+}
+
 .body-picture img {
   width: 100%;
   padding: 10px;
+}
+
+.card-body > a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
 }
 
 .content-card {
@@ -106,11 +129,19 @@ h3 {
   display: flex;
 }
 
+.card-col > p {
+  margin-left: 2px;
+}
+
+.card-col > i {
+  margin-left: 10px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 20px;
-  margin-top: 48px;
+  margin-top: 12px;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -118,43 +149,18 @@ h3 {
 
 /*---------- Apropos----------- */
 
-.about {
-  max-width: 75%;
-  margin: auto;
-  text-align: center;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 29px;
-}
-
-.content-about {
-  margin-top: 48px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.left-about {
-  width: 50%;
-}
-
-.right-about {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+.pass {
+  height: 10%;
 }
 
 footer {
   background-color: #5990bf;
   width: 100%;
-  height: 8vh;
+  height: 9vh;
   text-align: center;
 }
 
 footer > p {
-  padding-top: 20px;
+  padding-top: 22px;
   padding-bottom: 12px;
 }

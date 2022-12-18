@@ -65,16 +65,15 @@ h3 {
   width: 50%;
 }
 
-.right-part {
-  padding: 0;
-  width: 71%;
-}
-
 .flex-column {
   padding: 20px;
 }
 
 .left-part input {
+  width: 190%;
+}
+
+.left-part textarea {
   width: 190%;
 }
 
