@@ -1,3 +1,9 @@
+<?php session_start();
+  if(!empty($_SESSION['id_user'])){
+    header("Location: ../index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,12 +22,12 @@
   <header class="head">
 
     <div class="logo">
-      <a href="../blog/blog.html">Blog</a>
+      <a href="../blog/blog.php">Blog</a>
     </div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.html">A propos</a>
-        <a href="../connexion/connexion.html">Connexion</a>
+        <a href="../index.php">A propos</a>
+        <a href="./connexion/connexion.php">Connexion</a>
         <a href="#">Inscription</a>
         <a href="#">Profil</a>
       </div>
@@ -33,25 +39,46 @@
   <section class="connexion">
     <h1>Modifier mon profil</h1>
     <hr>
-    <form class="flex-connexion" action="">
+    <form class="flex-connexion" action="../controllers/register.php" method="POST">
       <div class="group">
         <div class="left-part">
-          <label for=""> Username</label>
-          <input type="text" name="" id="">
+          <label for=""> nom</label>
+          <input type="text"  id="">
         </div>
       </div>
+
+    
+
       <div class="group">
         <div class="left-part">
-          <label for="">Ancien mot de passe</label>
-          <input type="password" name="" id="">
+          <label for=""> Prenom</label>
+          <input type="text"  id="">
         </div>
       </div>
+
       <div class="group">
         <div class="left-part">
-          <label for="">Nouveau mot de passe</label>
-          <input type="password" name="" id="">
+          <label for=""> Email</label>
+          <input type="email"  id="">
         </div>
       </div>
+
+    
+
+      <div class="group">
+        <div class="left-part">
+          <label for=""> mot de passe</label>
+          <input type="password"  id="">
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="left-part">
+          <label for=""> Admin</label>
+          <input type="text"  id="">
+        </div>
+      </div>
+      
       <div class="btn-center">
         <button class="btn">Enregistrer</button>
       </div>

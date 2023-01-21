@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +17,13 @@
   <header class="head">
 
     <div class="logo">
-      <a href="./blog/blog.html">Blog</a>
+      <a href="./blog/blog.php">Blog</a>
     </div>
     <div class="nav">
       <div class="flex-nav">
         <a href="#">A propos</a>
-        <a href="./connexion/connexion.html">Connexion</a>
-        <a href="./inscription/inscription.html">Inscription</a>
+        <a href="./connexion/connexion.php">Connexion</a>
+        <a href="./inscription/inscription.php">Inscription</a>
         <a href="#">Profil</a>
       </div>
     </div>

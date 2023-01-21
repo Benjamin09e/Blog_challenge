@@ -18,9 +18,9 @@
     <div class="logo">Blog</div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.html">A propos</a>
-        <a href="../connexion/connexion.html">Connexion</a>
-        <a href="../inscription/inscription.html">Inscription</a>
+        <a href="../index.php">A propos</a>
+        <a href="../connexion/connexion.php">Connexion</a>
+        <a href="../inscription/inscription.php">Inscription</a>
         <a href="#">Profil</a>
       </div>
     </div>

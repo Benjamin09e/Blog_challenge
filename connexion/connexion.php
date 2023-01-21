@@ -1,3 +1,9 @@
+<?php session_start();
+  if(!empty($_SESSION['id_user'])){
+    header("Location: ../index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +22,13 @@
   <header class="head">
 
     <div class="logo">
-      <a href="../blog/blog.html">Blog</a>
+      <a href="../blog/blog.php">Blog</a>
     </div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.html">A propos</a>
+        <a href="../index.php">A propos</a>
         <a href="#">Connexion</a>
-        <a href="../inscription/inscription.html">Inscription</a>
+        <a href="../inscription/inscription.php">Inscription</a>
         <a href="#">Profil</a>
       </div>
     </div>
@@ -33,7 +39,7 @@
   <section class="connexion">
     <h1>Nouvelle post</h1>
     <hr>
-    <form class="flex-connexion" action="">
+    <form class="flex-connexion" action="../controllers/login.php" method="POST">
       <div class="group">
         <div class="left-part">
           <label for=""> Titre</label>
