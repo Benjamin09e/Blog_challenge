@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
     integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="connexion.css">
+  <link rel="stylesheet" href="inscription.css">
   <title>Blog Challenge</title>
 </head>
 
@@ -21,8 +21,8 @@
     <div class="nav">
       <div class="flex-nav">
         <a href="../index.html">A propos</a>
-        <a href="#">Connexion</a>
-        <a href="../inscription/inscription.html">Inscription</a>
+        <a href="../connexion/connexion.html">Connexion</a>
+        <a href="#">Inscription</a>
         <a href="#">Profil</a>
       </div>
     </div>
@@ -31,31 +31,31 @@
   </header>
 
   <section class="connexion">
-    <h1>Nouvelle post</h1>
+    <h1>Modifier mon profil</h1>
     <hr>
-    <div class="flex-connexion">
+    <form class="flex-connexion" action="">
       <div class="group">
         <div class="left-part">
-          <label for=""> Titre</label>
+          <label for=""> Username</label>
           <input type="text" name="" id="">
         </div>
       </div>
       <div class="group">
         <div class="left-part">
-          <label for=""> Description</label>
-          <textarea name="" id="" cols="" rows="10"></textarea>
+          <label for="">Ancien mot de passe</label>
+          <input type="password" name="" id="">
         </div>
       </div>
       <div class="group">
         <div class="left-part">
-          <label for=""> Nouveau mot de passe</label>
+          <label for="">Nouveau mot de passe</label>
           <input type="password" name="" id="">
         </div>
       </div>
       <div class="btn-center">
-        <button class="btn">Envoyer</button>
+        <button class="btn">Enregistrer</button>
       </div>
-    </div>
+    </form>
   </section>
 
   <footer>
