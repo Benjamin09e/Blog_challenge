@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,30 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
-    integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <title>Blog Challenge</title>
 </head>
 
 <body>
-  <header class="head">
-
-    <div class="logo">
-      <a href="./blog/blog.php">Blog</a>
-    </div>
-    <div class="nav">
-      <div class="flex-nav">
-        <a href="#">A propos</a>
-        <a href="./connexion/connexion.php">Connexion</a>
-        <a href="./inscription/inscription.php">Inscription</a>
-        <a href="#">Profil</a>
-      </div>
-    </div>
-
-
-  </header>
+  <?php
+  require('./navigation.php');
+  ?>
 
   <section class="welcome">
     <div class="welcome-head">
@@ -115,7 +100,7 @@
     </div>
   </section>
   <section class="pass">
-    
+
   </section>
   <footer>
     <p>Footer</p>

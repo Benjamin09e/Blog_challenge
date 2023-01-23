@@ -39,46 +39,39 @@
   <section class="connexion">
     <h1>Modifier mon profil</h1>
     <hr>
-    <form class="flex-connexion" action="../controllers/register.php" method="POST">
+    <?php if(isset($_GET['error'])){ ?>
+      <p><?php echo $_GET['error'] ?></p>
+    <?php } ?>
+    
+    <form class="flex-connexion" action="../controllers/register.php" method="post">
       <div class="group">
         <div class="left-part">
           <label for=""> nom</label>
-          <input type="text"  id="">
+          <input type="text" name="nom" >
         </div>
       </div>
-
-    
 
       <div class="group">
         <div class="left-part">
           <label for=""> Prenom</label>
-          <input type="text"  id="">
+          <input type="text" name="prenom" >
         </div>
       </div>
 
       <div class="group">
         <div class="left-part">
           <label for=""> Email</label>
-          <input type="email"  id="">
+          <input type="email" name="email" >
         </div>
       </div>
-
-    
 
       <div class="group">
         <div class="left-part">
           <label for=""> mot de passe</label>
-          <input type="password"  id="">
+          <input type="password" name="password" >
         </div>
       </div>
 
-      <div class="group">
-        <div class="left-part">
-          <label for=""> Admin</label>
-          <input type="text"  id="">
-        </div>
-      </div>
-      
       <div class="btn-center">
         <button class="btn">Enregistrer</button>
       </div>

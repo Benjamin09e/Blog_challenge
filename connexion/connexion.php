@@ -1,8 +1,8 @@
 <?php session_start();
-  if(!empty($_SESSION['id_user'])){
-    header("Location: ../index.php");
-    exit();
-  }
+if (!empty($_SESSION['id_user'])) {
+  header("Location: ../index.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +11,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
-    integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="connexion.css">
   <title>Blog Challenge</title>
 </head>
@@ -42,20 +40,15 @@
     <form class="flex-connexion" action="../controllers/login.php" method="POST">
       <div class="group">
         <div class="left-part">
-          <label for=""> Titre</label>
-          <input type="text" name="" id="">
+          <label for=""> Email</label>
+          <input type="email" name="email">
         </div>
       </div>
+
       <div class="group">
         <div class="left-part">
-          <label for=""> Description</label>
-          <textarea name="" id="" cols="" rows="10"></textarea>
-        </div>
-      </div>
-      <div class="group">
-        <div class="left-part">
-          <label for=""> Nouveau mot de passe</label>
-          <input type="password" name="" id="">
+          <label for="">Mot de passe</label>
+          <input type="password" name="password">
         </div>
       </div>
       <div class="btn-center">
