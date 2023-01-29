@@ -27,7 +27,7 @@ if (!empty($_SESSION['id_user'])) {
         <a href="../index.php">A propos</a>
         <a href="#">Connexion</a>
         <a href="../inscription/inscription.php">Inscription</a>
-        <a href="#">Profil</a>
+        <a href="../profil.php">Profil</a>
       </div>
     </div>
 

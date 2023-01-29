@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+
+include "config/db.php";
+$row = $connexion->query('select * from article');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,73 +39,15 @@
       <p>Mes posts</p>
     </div>
     <div class="cards">
-      <div class="card-body">
-        <a href="#">
-          <img src="images/5.jpg " width="100%">
-          <div class="content-card">
-            <div>
-              <p>Par Benjamin</p>
-            </div>
-            <div>
-              <p>17/12/2022</p>
-            </div>
+    
+        <?php foreach ($row as $row) { ?>
+          <div class="card-body">
+            <img src="<?php echo $row['image']; ?>" class=">
+              <p> <?php echo $row['description']; ?> </p>
           </div>
-          <div class="content-card">
-            <div class="card-col">
-              <p>10</p><i class="fa fa-heart" aria-hidden="true"></i>
-            </div>
-            <div class="card-col">
-              <p>10</p> <i class="fa fa-comments" aria-hidden="true"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card-body">
-        <a href="#">
-          <img src="images/6.jpg " width="100%">
-          <div class="content-card">
-            <div>
-              <p>Par Benjamin</p>
-            </div>
-            <div>
-              <p>17/12/2022</p>
-            </div>
-          </div>
-          <div class="content-card">
-            <div class="card-col">
-              <p>10</p><i class="fa fa-heart" aria-hidden="true"></i>
-            </div>
-            <div class="card-col">
-              <p>10</p> <i class="fa fa-comments" aria-hidden="true"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card-body">
-        <a href="#">
-          <img src="images/7.jpg " width="100%">
-          <div class="content-card">
-            <div>
-              <p>Par Benjamin</p>
-            </div>
-            <div>
-              <p>17/12/2022</p>
-            </div>
-          </div>
-          <div class="content-card">
-            <div class="card-col">
-              <p>10</p><i class="fa fa-heart" aria-hidden="true"></i>
-            </div>
-            <div class="card-col">
-              <p>10</p> <i class="fa fa-comments" aria-hidden="true"></i>
-            </div>
-          </div>
-        </a>
-      </div>
+        <?php } ?>
     </div>
-  </section>
-  <section class="pass">
-
+  
   </section>
   <footer>
     <p>Footer</p>

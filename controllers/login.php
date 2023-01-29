@@ -35,7 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $_SESSION['nom'] = $ligne['nom'];
         $_SESSION['prenom'] = $ligne['prenom'];
         $_SESSION['email'] = $ligne['email'];
-        $_SESSION['id_user'] = $ligne['id_user'];
+        $_SESSION['id_user'] = $ligne['id_users'];
         $_SESSION['admin'] = $ligne['admin'];
 
         header('Location: ../index.php');

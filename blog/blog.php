@@ -21,7 +21,7 @@
         <a href="../index.php">A propos</a>
         <a href="../connexion/connexion.php">Connexion</a>
         <a href="../inscription/inscription.php">Inscription</a>
-        <a href="#">Profil</a>
+        <a href="../profil.php">Profil</a>
       </div>
     </div>
 
