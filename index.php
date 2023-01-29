@@ -39,15 +39,15 @@ $row = $connexion->query('select * from article');
       <p>Mes posts</p>
     </div>
     <div class="cards">
-    
-        <?php foreach ($row as $row) { ?>
-          <div class="card-body">
-            <img src="<?php echo $row['image']; ?>" class=">
-              <p> <?php echo $row['description']; ?> </p>
-          </div>
-        <?php } ?>
+      <?php foreach ($row as $row) { ?>
+        <div class="card-body">
+          <img src="./<?php echo $row['image']; ?>" />
+
+          <p> <?php echo $row['description']; ?> </p>
+        </div>
+      <?php } ?>
     </div>
-  
+
   </section>
   <footer>
     <p>Footer</p>

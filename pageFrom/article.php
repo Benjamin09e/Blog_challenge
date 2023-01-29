@@ -5,10 +5,10 @@ $status = '';
 
 if (isset($_POST['send'])) {
 
-  $folderImage = '../images_article';
-  $folder = 'imges_artcile';
-  $fileName = basename($_fille['image']['name']);
-  $link = $folderimage . $fileName;
+  $folderImage = '../images_article/';
+  $folder = 'imges_artcile/';
+  $fileName = basename($_FILES['image']['name']);
+  $link = $folderImage . $fileName;
   $linkData = $folder . $fileName;
   $type = pathinfo($link, PATHINFO_EXTENSION);
   $descrip = $_POST['description'];
@@ -16,7 +16,7 @@ if (isset($_POST['send'])) {
 
   if (in_array($type, $typeExtension)) {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $link)) {
-      $sql = "insert into article (id_user, date, image, description) values('{$id_user}', '{$date}','{$image}','{$description}')";
+      $sql = "insert into article (id_user, date, image, description) values('{$_SESSION['id_user']}', NOW(),'{$linkData}','{$descrip}')";
       $result = mysqli_query($connexion, $sql);
       if ($result) {
         $status = 'Le type du fichier est correct';
