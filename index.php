@@ -1,7 +1,7 @@
 <?php session_start();
 
 include "config/db.php";
-$row = $connexion->query('select * from article');
+$articles = $connexion->query('select * from article');
 
 ?>
 <!DOCTYPE html>
@@ -39,13 +39,18 @@ $row = $connexion->query('select * from article');
       <p>Mes posts</p>
     </div>
     <div class="cards">
-      <?php foreach ($row as $row) { ?>
+      <?php foreach ($articles as $articles) { ?>
         <div class="card-body">
-          <img src="./<?php echo $row['image']; ?>" />
-
-          <p> <?php echo $row['description']; ?> </p>
+          <img src="./<?php echo $articles['image']; ?>" />
+          <p><?php echo $articles['description']; ?></p>
         </div>
       <?php } ?>
+
+
+
+
+
+
     </div>
 
   </section>

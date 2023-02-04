@@ -6,7 +6,7 @@ $status = '';
 if (isset($_POST['send'])) {
 
   $folderImage = '../images_article/';
-  $folder = 'imges_artcile/';
+  $folder = 'images_article/';
   $fileName = basename($_FILES['image']['name']);
   $link = $folderImage . $fileName;
   $linkData = $folder . $fileName;
