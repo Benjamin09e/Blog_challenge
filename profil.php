@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (empty($_SESSION['id_user'])) {
+  header("Location: index.php");
+  exit();
+}
 
 ?>
 
@@ -20,14 +24,27 @@ session_start();
   <?php
   require('./navigation.php');
   ?>
-  <div class="profil">
-    <div>
-      <h3>Nom: <?php echo $_SESSION['nom'] ?></h3>
-      <h3>Prenom: <?php echo $_SESSION['prenom'] ?></h3>
-      <h3>Email: <?php echo $_SESSION['email'] ?></h3>
-      <a href="./pageFrom/article.php" class="">New article</a>
+
+  <section class="welcome">
+    <div class="profil">
+      <div class="welcome-head">
+        <div class="fa-useur">
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </div>
+        <div class="part-middle">
+          <button>S'abonné</button>
+        </div>
+      </div>
+      <div>
+        <h3>Nom: <?php echo $_SESSION['nom'] ?></h3>
+        <h3>Prenom: <?php echo $_SESSION['prenom'] ?></h3>
+        <h3>Email: <?php echo $_SESSION['email'] ?></h3>
+        <button class="btn-link"><a href="./pageFrom/article.php" class="link">New article</a></button>
+      </div>
     </div>
-  </div>
+  </section>
+
+
 
   <footer>
     <p>Footer</p>

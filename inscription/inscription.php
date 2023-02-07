@@ -24,7 +24,8 @@ if (!empty($_SESSION['id_user'])) {
     </div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.php">A propos</a>
+        <a href="../index.php">Accueil</a>
+        <a href="#">A propos</a>
         <a href="./connexion/connexion.php">Connexion</a>
         <a href="#">Inscription</a>
         <a href="../profil.php">Profil</a>

@@ -22,35 +22,17 @@ $articles = $connexion->query('select * from article');
   ?>
 
   <section class="welcome">
-    <div class="welcome-head">
-      <div class="fa-useur">
-        <i class="fa fa-user-circle" aria-hidden="true"></i>
-      </div>
-      <div class="part-middle">
-        <p>Username: Benj</p>
-        <p>Email: Benj@gmail.com</p>
-        <button>S'abonné</button>
-      </div>
-      <div class="part-btn">
-        <button>New post</button>
-      </div>
-    </div>
+
     <div class="welcome-p">
       <p>Mes posts</p>
     </div>
     <div class="cards">
       <?php foreach ($articles as $articles) { ?>
         <div class="card-body">
-          <img src="./<?php echo $articles['image']; ?>" />
+          <img src="./<?php echo $articles['image']; ?>" height="200px" />
           <p><?php echo $articles['description']; ?></p>
         </div>
       <?php } ?>
-
-
-
-
-
-
     </div>
 
   </section>

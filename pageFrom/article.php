@@ -1,5 +1,10 @@
 <?php session_start();
 
+if (empty($_SESSION['id_user'])) {
+  header("Location: ../index.php");
+  exit();
+}
+
 include "../config/db.php";
 $status = '';
 
@@ -49,10 +54,8 @@ if (isset($_POST['send'])) {
     </div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.php">A propos</a>
-        <a href="#">Connexion</a>
-        <a href="../inscription/inscription.php">Inscription</a>
-        <a href="../profil.php">Profil</a>
+        <a href="../index.php">Accueil</a>
+        <a href="#">A propos</a>
       </div>
     </div>
 

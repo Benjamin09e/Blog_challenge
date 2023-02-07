@@ -108,6 +108,7 @@ h3 {
 .card-body img {
   border-radius: 17px 17px 0 0;
   width: 100%;
+  height: max-content;
 }
 
 .content-card {
@@ -135,6 +136,11 @@ h3 {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.cards img {
+  border-radius: 17px 17px 0 0;
+  width: 100%;
 }
 
 /*---------- Apropos----------- */

@@ -8,5 +8,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: chartreuse;
+  /*background-color: chartreuse;*/
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-link {
+  border-radius: 10px 15px;
+  background-color: aquamarine;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
 }

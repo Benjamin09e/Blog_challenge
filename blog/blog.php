@@ -1,3 +1,14 @@
+<?php session_start();
+if (!empty($_SESSION['id_user'])) {
+  header("Location: ../index.php");
+  exit();
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +16,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
-    integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="blog.css">
   <title>Blog</title>
 </head>
@@ -18,9 +27,8 @@
     <div class="logo">Blog</div>
     <div class="nav">
       <div class="flex-nav">
-        <a href="../index.php">A propos</a>
-        <a href="../connexion/connexion.php">Connexion</a>
-        <a href="../inscription/inscription.php">Inscription</a>
+        <a href="../index.php">Accueil</a>
+        <a href="#">A propos</a>
         <a href="../profil.php">Profil</a>
       </div>
     </div>
@@ -65,17 +73,17 @@
         <div class="left-part">
           <input type="text" name="" id="">
         </div>
-      
-      <div class="group">
-        <div class="left-part">
-          <input type="password" name="" id="">
+
+        <div class="group">
+          <div class="left-part">
+            <input type="password" name="" id="">
+          </div>
         </div>
-      </div>
-      <div class="group">
-        <div class="left-part">
-          <input type="password" name="" id="">
+        <div class="group">
+          <div class="left-part">
+            <input type="password" name="" id="">
+          </div>
         </div>
-      </div>
     </div>
     </form>
   </section>
