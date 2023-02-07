@@ -1,10 +1,13 @@
 <?php session_start();
 
 include "config/db.php";
-include "./detail.php";
 
-$articles = $connexion->query('select * from articles
-INNER JOIN useurs ON articles.id_useur = useurs.id_useur'
+$id = $_GET['articleId'];
+
+
+$articles = $connexion->query(
+  "select * from articles
+  WHERE id_article = '{$id}' "
 );
 
 ?>
@@ -33,8 +36,8 @@ INNER JOIN useurs ON articles.id_useur = useurs.id_useur'
     <div class="cards">
       <?php foreach ($articles as $articles) { ?>
         <div class="card-body">
-          <img src="./post.php?articleId= <?php echo $articles['image']; ?>" height="200px" />
-          <p><?php echo dimunier($articles['description'], 75) ; ?></p>
+          <img src="./<?php echo $articles['image']; ?>" height="200px" />
+          <p><?php echo $articles['description']; ?></p>
           <p>Par <?php echo $articles['nom']; ?></p>
           <p><?php echo $articles['date']; ?></p>
         </div>
