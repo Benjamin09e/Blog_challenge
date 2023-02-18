@@ -6,11 +6,14 @@ $id = $_GET['articleId'];
 
 
 $articles = $connexion->query(
-  "select * from articles
-  WHERE id_article = '{$id}' "
+  "select * from article
+INNER JOIN users ON article.id_user = users.id_users
+where id= '{$id}'"
+
 );
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,10 +37,10 @@ $articles = $connexion->query(
       <p>Mes posts</p>
     </div>
     <div class="cards">
+
       <?php foreach ($articles as $articles) { ?>
         <div class="card-body">
           <img src="./<?php echo $articles['image']; ?>" height="200px" />
-          <p><?php echo $articles['description']; ?></p>
           <p>Par <?php echo $articles['nom']; ?></p>
           <p><?php echo $articles['date']; ?></p>
         </div>
