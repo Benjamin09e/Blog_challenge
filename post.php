@@ -39,12 +39,42 @@ where id= '{$id}'"
     <div class="cards">
 
       <?php foreach ($articles as $articles) { ?>
+
+        <?php
+        $like = $connexion->query("Select * from likes where id_article = '{$articles['id']}'");
+
+        $description = $connexion->query("select* from commentaire inner join users on commentaire.id_user= users.id_users
+        where id_article ='{$articles['id']}'
+        ");
+
+        ?>
         <div class="card-body">
           <img src="./<?php echo $articles['image']; ?>" height="200px" />
           <p>Par <?php echo $articles['nom']; ?></p>
           <p><?php echo $articles['date']; ?></p>
         </div>
+        <p>Messages</p>
+        <form class="from" method="POST" action="./commentaire.php?id_article=<?php echo $articles['id'] ?>">
+          <div class="left-part">
+            <textarea name="description" cols="30" rows="10"></textarea>
+          </div>
+          <div class="btn-center">
+            <button class="btn" name="send">Envoyer</button>
+          </div>
+        </form>
+
+        <div>
+          <?php foreach ($description as $send) { ?>
+            <div>
+              <p><?php echo $send['nom']; ?><?php echo $send['prenom']; ?></p>
+              <p><?php echo $send['description'] ?></p>
+            </div>
+
+          <?php } ?>
+        </div>
+
       <?php } ?>
+
     </div>
 
   </section>
