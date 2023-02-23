@@ -44,8 +44,7 @@ where id= '{$id}'"
         $like = $connexion->query("Select * from likes where id_article = '{$articles['id']}'");
 
         $description = $connexion->query("select* from commentaire inner join users on commentaire.id_user= users.id_users
-        where id_article ='{$articles['id']}'
-        ");
+        where id_article ='{$articles['id']}' ");
 
         ?>
         <div class="card-body">

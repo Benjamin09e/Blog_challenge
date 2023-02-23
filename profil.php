@@ -44,8 +44,6 @@ if (empty($_SESSION['id_user'])) {
     </div>
   </section>
 
-
-
   <footer>
     <p>Footer</p>
   </footer>
