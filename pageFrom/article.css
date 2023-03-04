@@ -4,19 +4,9 @@
   box-sizing: border-box;
 }
 
-hr {
-  border: solid 1px blue;
-  width: 6%;
-  margin: 8px;
-}
-
-body {
-  height: 100vh;
-}
-
 /*---------- Header----------- */
 
-.head {
+.profil .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,9 +28,9 @@ h3 {
   color: black;
 }
 
-/*---------- Welcome----------- */
+/*---------- Connexion ----------- */
 
-.welcome {
+.connexion {
   max-width: 75%;
   margin: auto;
   display: flex;
@@ -49,30 +39,9 @@ h3 {
   align-items: center;
   padding: 29px;
   background-color: gray;
-  height: 65vh;
+  height: max-content;
   margin-bottom: 32px;
   border-radius: 46px;
-}
-
-.welcome-head {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-  height: 10vh;
-  padding-bottom: 20px;
-}
-
-.welcome-p {
-  display: flex;
-  justify-content: start;
-  align-items: end;
-  width: 70%;
-  padding-top: 40px;
-}
-
-.fa-useur i {
-  font-size: 80px;
-  color: aliceblue;
 }
 
 .part-middle > button {
@@ -148,11 +117,6 @@ h3 {
 }
 
 /*---------- Apropos----------- */
-
-.pass {
-  height: 10%;
-}
-
 
 footer {
   background-color: #5990bf;

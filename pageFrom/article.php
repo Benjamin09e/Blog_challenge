@@ -47,6 +47,7 @@ if (isset($_POST['send'])) {
 </head>
 
 <body>
+
   <header class="head">
 
     <div class="logo">
@@ -58,16 +59,12 @@ if (isset($_POST['send'])) {
         <a href="#">A propos</a>
       </div>
     </div>
-
-
   </header>
 
   <section class="connexion">
-
-
     <form class="from" method="POST" enctype="multipart/form-data">
       <h1>Nouvelle article</h1>
-      <hr>
+
       <?php
       if ($status != '') { ?>
         <p><?php echo $status ?></p>

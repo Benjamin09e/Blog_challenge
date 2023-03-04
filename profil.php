@@ -5,6 +5,14 @@ if (empty($_SESSION['id_user'])) {
   exit();
 }
 
+include "config/db.php";
+include "./detail.php";
+
+$articles = $connexion->query(
+  "select * from article
+where id_user ='{$_SESSION['id_user']}'"
+);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +39,7 @@ if (empty($_SESSION['id_user'])) {
         <div class="fa-useur">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
         </div>
-        <div class="part-middle">
-          <button>S'abonné</button>
-        </div>
+
       </div>
       <div>
         <h3>Nom: <?php echo $_SESSION['nom'] ?></h3>
@@ -42,6 +48,40 @@ if (empty($_SESSION['id_user'])) {
         <button class="btn-link"><a href="./pageFrom/article.php" class="link">New article</a></button>
       </div>
     </div>
+
+
+    <div class="cards">
+      <?php foreach ($articles as $articles) { ?>
+        <?php
+        $like = $connexion->query(
+          "select * from likes
+        where id_article='{$articles['id']}'"
+        );
+
+        $message = $connexion->query(
+          "select * from 
+          commentaire where id_article = '{$articles['id']}'"
+        );
+        ?>
+        <div class="card-body">
+          <img src="./<?php echo $articles['image']; ?>" height="200px" />
+          <a href="./post.php?articleId=<?php echo $articles['id'] ?>"><?php echo dimunier($articles['description'], 20); ?>
+          </a>
+          <p> </p>
+          <p><?php echo $articles['date']; ?></p>
+          <br>
+
+          <a href="./PageFrom/edit.php?articleId=<?php echo $articles['id'] ?>"><i class="fa fa-pen" aria-hidden="true"></i></a>
+          <a href="./delete.php?articleId=<?php echo $articles['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+
+
+        </div>
+      <?php } ?>
+    </div>
+
+
+
+
   </section>
 
   <footer>

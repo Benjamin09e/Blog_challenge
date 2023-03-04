@@ -7,7 +7,6 @@ include "./detail.php";
 $articles = $connexion->query(
   'select * from article
 INNER JOIN users ON article.id_user = users.id_users'
-
 );
 
 ?>
@@ -41,6 +40,11 @@ INNER JOIN users ON article.id_user = users.id_users'
           "select * from likes
         where id_article='{$articles['id']}'"
         );
+
+        $message = $connexion->query(
+          "select * from 
+          commentaire where id_article = '{$articles['id']}'"
+        );
         ?>
         <div class="card-body">
           <img src="./<?php echo $articles['image']; ?>" height="200px" />
@@ -50,7 +54,8 @@ INNER JOIN users ON article.id_user = users.id_users'
           <p><?php echo $articles['date']; ?></p>
           <br>
           <p> <?php echo mysqli_num_rows($like); ?> <a href="./like.php?id_article=<?php echo $articles['id'] ?>"><i class="fa fa-heart" aria-hidden="true">like</i></a></p>
-          <p>14 <i class="fa fa-comments" aria-hidden="true">Messages</i></p>
+          <p><?php echo mysqli_num_rows($message); ?> <i class="fa fa-comments" aria-hidden="true">Messages</i></p>
+
         </div>
       <?php } ?>
     </div>
