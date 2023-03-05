@@ -10,14 +10,18 @@ $status = '';
 
 if (isset($_POST['send'])) {
 
-  $folderImage = '../images_article/';
-  $folder = 'images_article/';
+  $folderImage ="../images_article/{$_SESSION['nom']}_{$_SESSION['id_user']}/article";
+  $folder = "/images_article/{$_SESSION['nom']}_{$_SESSION['id_user']}/article";
   $fileName = basename($_FILES['image']['name']);
   $link = $folderImage . $fileName;
   $linkData = $folder . $fileName;
   $type = pathinfo($link, PATHINFO_EXTENSION);
   $descrip = $_POST['description'];
   $typeExtension = array('jpg', 'png', 'jpeg', 'gif', 'PNG');
+
+  if(!file_exists($folderImage)){
+    mkdir($folderImage, 0777, true);
+  }
 
   if (in_array($type, $typeExtension)) {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $link)) {

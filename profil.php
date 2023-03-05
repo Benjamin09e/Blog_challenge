@@ -13,7 +13,44 @@ $articles = $connexion->query(
 where id_user ='{$_SESSION['id_user']}'"
 );
 
+$status = '';
+
+if (isset($_POST['send'])) {
+
+  $folderImage = "../images_article/{$_SESSION['nom']}_{$_SESSION['id_user']}/profil";
+  $folder = "/images_article/{$_SESSION['nom']}_{$_SESSION['id_user']}/profil";
+  $fileName = basename($_FILES['image']['name']);
+  $link = $folderImage . $fileName;
+  $linkData = $folder . $fileName;
+  $type = pathinfo($link, PATHINFO_EXTENSION);
+  $descrip = $_POST['description'];
+  $typeExtension = array('jpg', 'png', 'jpeg', 'gif', 'PNG');
+
+  if (!file_exists($folderImage)) {
+    mkdir($folderImage, 0777, true);
+  }
+
+  if (in_array($type, $typeExtension)) {
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $link)) {
+      $sqlOne = "update users set images ={$linkData} where id_users = {$_SESSION['id_user']}";
+
+      $result = mysqli_query($connexion, $sqlOne);
+      if ($result) {
+        $sql = "insert into profil (id_user, link, date) values('{$_SESSION['id_user']}', NOW(),'{$linkData}')";
+        $result = mysqli_query($connexion, $sql);
+        if ($result) {
+          $status = 'Le type du fichier est correct';
+        } else {
+          $status = 'il y\'à une erreur à verifier';
+        }
+      }
+    }
+  } else {
+    $status = 'Le type du fichier est incorrect';
+  }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +70,84 @@ where id_user ='{$_SESSION['id_user']}'"
   require('./navigation.php');
   ?>
 
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
   <section class="welcome">
     <div class="profil">
       <div class="welcome-head">
         <div class="fa-useur">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
+
+          <!-- Trigger/Open The Modal -->
+          <button class="btn-link" id="myBtn"> Profil</button>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+
+              <form action="" method="post">
+                <input type="file">
+                <button class="btn-link">Changer son Profil</button>
+              </form>
+            </div>
+
+          </div>
         </div>
+
 
       </div>
       <div>
@@ -88,6 +197,33 @@ where id_user ='{$_SESSION['id_user']}'"
     <p>Footer</p>
   </footer>
 
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>

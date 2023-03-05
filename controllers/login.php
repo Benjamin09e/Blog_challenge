@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include "../config/db.php";
 
@@ -37,6 +38,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $_SESSION['email'] = $ligne['email'];
         $_SESSION['id_user'] = $ligne['id_users'];
         $_SESSION['admin'] = $ligne['admin'];
+        $_SESSION['images'] = $ligne['images'];
 
         header('Location: ../index.php');
         exit();
@@ -53,3 +55,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
   header('Location: ../connexion/connexion.php');
   exit();
 }
+
+?>
